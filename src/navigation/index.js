@@ -1,9 +1,11 @@
 import React from 'react';
+import { View } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import CustomIcon from '../components/CustomIcon';
 import Label from '../components/Label';
+import HeaderRight from '../components/HeaderRight'
 
 import getHeaderTitle from '../navigation/getHeaderTitle';
 import { Color, Font } from '../utils/theme';
@@ -12,15 +14,28 @@ import HomeScreen from '../layouts/Home';
 import PaymentsScreen from '../layouts/Payments';
 import ProfileScreen from '../layouts/Profile';
 import CreditScreen from '../layouts/Credit';
+import ManageDebitCardScreen from '../layouts/DebitCardStack/ManageDebitCard';
+import SetupCardLimitScreen from '../layouts/DebitCardStack/SetupCardLimit';
+import Logo from './../assets/images/Logo.svg';
+
+const screenOptions = ({ navigation }) => ({
+    headerLeft: () => <View />,
+    headerTitle: () => <View />,
+    headerRight: () => <Logo style={{ marginRight: 5 }} />,
+    headerStyle: {
+        height: 56,
+        backgroundColor: Color.BG_THEME,
+        alignItems: 'center'
+    },
+    gestureEnabled: false
+});
 
 const DebitCard = createNativeStackNavigator();
 export const DebitCardStack = () => {
     return (
-        <DebitCard.Navigator screenOptions={{
-            headerShown: false
-        }}>
-            <DebitCard.Screen name={Routes.ManageDebitCard} component={HomeScreen} />
-            <DebitCard.Screen name={Routes.SetupCardLimit} component={HomeScreen} />
+        <DebitCard.Navigator screenOptions={screenOptions}>
+            <DebitCard.Screen name={Routes.ManageDebitCard} component={ManageDebitCardScreen} options={{ headerShown: false }} />
+            <DebitCard.Screen name={Routes.SetupCardLimit} component={SetupCardLimitScreen} />
         </DebitCard.Navigator>
     )
 }
@@ -48,21 +63,21 @@ export const TabBarNavigation = () => {
                         iconName = 'Account';
                     }
                     return (
-                        <CustomIcon name={iconName} size={Font.SIZE_24} color={focused ? Color.THEME : Color.TAB_TEXT_COLOR } />
+                        <CustomIcon name={iconName} size={Font.SIZE_24} color={focused ? Color.THEME : Color.TAB_TEXT_COLOR} />
                     )
                 },
                 tabBarLabel: ({ focused }) => {
                     return (
-                         <Label 
+                        <Label
                             style={{
                                 fontSize: Font.SIZE_09,
-                                fontFamily: Font.COMFORTAA_REGULAR,
+                                fontFamily: Font.COMFORTAA_MEDIUM,
                                 color: focused ? Color.THEME : Color.TAB_TEXT_COLOR,
                                 includeFontPadding: false,
                                 marginBottom: 5
                             }}
-                         >
-                             {getHeaderTitle(route, true)}
+                        >
+                            {getHeaderTitle(route, true)}
                         </Label>
                     )
                 },
@@ -71,11 +86,15 @@ export const TabBarNavigation = () => {
                     backgroundColor: Color.WHITE,
                     alignItems: 'center',
                     justifyContent: 'center',
-                    height: 56
+                    shadowColor: Color.BLACK,
+                    shadowOffset: { width: 0, height: 1 },
+                    shadowOpacity: 0.15,
+                    shadowRadius: 4,
+                    elevation: 3,
                 },
                 tabBarHideOnKeyboard: true
             })}
-            >
+        >
             <TabBar.Screen name={Routes.Home} component={HomeScreen} />
             <TabBar.Screen name={Routes.DebitCardStack} component={DebitCardStack} />
             <TabBar.Screen name={Routes.Payments} component={PaymentsScreen} />

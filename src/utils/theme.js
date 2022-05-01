@@ -7,32 +7,7 @@ export const Color = {
     THEME: '#01D167',
     TAB_TEXT_COLOR: '#DDDDDD',
     TEXT_COLOR: '#222222',
-    TITLE_TEXT_COLOR: '#25345F',
-
-    
-    RED: '#E31F1F',
-    DEEPBLUE: '#351FE3',
-    GREY: '#808184',
-    TXTGREY: '#505050',
-    BLACKLIGHT: "#14142B",
-    NEON: '#DEFE22',
-    NEONGREEN: '#90FF58',
-    OPACITY_BLUE: '#D7D2F9',
-    SEA_BLUE: '#7BFFFF',
-    IMAGE_BG: '#D3D3D3',
-
-    TEXT_DEEPBLUE: '#351FE3',
-    TEXT_BLACK: '#000000',
-    TEXT_WHITE: '#FFFFFF',
-    TEXT_GREY_LIGHT: "#808184",
-    TEXT_RADIO: "#707070",
-    TEXT_CARD: "#EEEEEE",
-    TEXT_BLACK_DARK: '#1B1C1E',
-    BORDER_GREY: '#808184',
-    BORDER_LIGHT: '#E2E2E2',
-    BORDER_NEON: '#DEFE22',
-    OPACITY_LIGHT: '#EBE9FC',
-    INPUT_LIGHT: '#DADADA',
+    TITLE_TEXT_COLOR: '#25345F'
 };
 
 export const Font = {

@@ -4,14 +4,14 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import Label from '../../../components/Label'
 import styles from './styles'
 
-const Home = ({ navigation, route }) => {
+const SetupCardLimit = ({ navigation, route }) => {
     return (
         <SafeAreaView style={styles.container}>
             <View
                 style={styles.content}>
 
                 <Label>
-                     Home Screen
+                    Card Setup Screen
                 </Label>
 
             </View>
@@ -20,4 +20,4 @@ const Home = ({ navigation, route }) => {
     )
 }
 
-export default Home;
+export default SetupCardLimit;
