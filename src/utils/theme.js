@@ -7,7 +7,8 @@ export const Color = {
     THEME: '#01D167',
     TAB_TEXT_COLOR: '#DDDDDD',
     TEXT_COLOR: '#222222',
-    TITLE_TEXT_COLOR: '#25345F'
+    TITLE_TEXT_COLOR: '#25345F',
+    INPUT_LIGHT: '#DADADA',
 };
 
 export const Font = {
