@@ -7,7 +7,7 @@ export const getAxiosInstance = (token) => {
             baseURL: Urls.BASE_URL,
             timeout: 60000,
             headers: {
-                "Content-Type": "application/x-www-form-urlencoded",
+                "Content-Type": "application/json",
                 'Authorization': token,
             },
         });
