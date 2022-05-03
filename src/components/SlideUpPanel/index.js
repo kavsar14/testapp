@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { View, Animated } from 'react-native'
+import { View } from 'react-native'
 import SlidingUpPanel from 'rn-sliding-up-panel'
 
 import styles from './styles'
@@ -11,7 +11,6 @@ const SlideUpPanel = (props) => {
         bottomMargin
     } = props;
     const slider = useRef();
-    // const pan = useRef(new Animated.Value(0)).current;
 
     return (
         <SlidingUpPanel

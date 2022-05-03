@@ -24,10 +24,3 @@ export const hideToast = () => {
         type: types.HIDE_TOAST
     }
 }
-
-export const switchProfile = (data) => {
-    return {
-        type: types.SWITCH_PROFILE,
-        payload: data
-    }
-}

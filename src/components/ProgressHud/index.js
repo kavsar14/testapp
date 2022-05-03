@@ -7,6 +7,8 @@ import { Color } from "../../utils/theme";
 const ProgressHud = () => {
     const animating = useSelector(state => state.common.isLoading);
 
+    console.log("animating ",animating);
+
     if (animating) {
         return (
             <View style={styles.mainContainer}>
@@ -14,9 +16,9 @@ const ProgressHud = () => {
                     <ActivityIndicator
                         style={styles.indicatorStyle}
                         animating={true}
-                        color={Color.WHITE}
+                        color={Color.THEME}
                         size="large" />
-                    <Text style={{ color: Color.WHITE, marginBottom: 10, marginLeft: 10, marginRight: 10 }}>
+                    <Text style={{ color: Color.THEME, marginBottom: 10, marginLeft: 10, marginRight: 10 }}>
                         {'Please Wait'}
                     </Text>
                 </View>
@@ -38,7 +40,7 @@ const styles = StyleSheet.create({
         elevation: 10
     },
     centerContainer: {
-        backgroundColor: Color.BLACK,
+        backgroundColor: Color.WHITE,
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 5

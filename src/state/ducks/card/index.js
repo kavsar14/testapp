@@ -1,6 +1,6 @@
 import reducer from './reducer';
-import * as ActivityAction from './actions';
+import * as CardActions from './actions';
 
-export { ActivityAction };
+export { CardActions };
 
 export default reducer;

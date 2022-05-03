@@ -5,7 +5,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import CustomIcon from '../components/CustomIcon';
 import Label from '../components/Label';
-import HeaderRight from '../components/HeaderRight'
 
 import getHeaderTitle from '../navigation/getHeaderTitle';
 import { Color, Font } from '../utils/theme';
@@ -16,26 +15,27 @@ import ProfileScreen from '../layouts/Profile';
 import CreditScreen from '../layouts/Credit';
 import ManageDebitCardScreen from '../layouts/DebitCardStack/ManageDebitCard';
 import SetupCardLimitScreen from '../layouts/DebitCardStack/SetupCardLimit';
-import Logo from './../assets/images/Logo.svg';
 
 const screenOptions = ({ navigation }) => ({
     headerLeft: () => <View />,
-    headerTitle: () => <View />,
-    headerRight: () => <Logo style={{ marginRight: 5 }} />,
+    headerTitle: () => null,
+    headerRight: () => <View />,
     headerStyle: {
         height: 56,
         backgroundColor: Color.BG_THEME,
-        alignItems: 'center'
+        alignItems: 'center',
+        shadowOffset: { height: 0, width: 0 },
+        elevation: 0
     },
-    gestureEnabled: false
+    gestureEnabled: false,
 });
 
 const DebitCard = createNativeStackNavigator();
 export const DebitCardStack = () => {
     return (
-        <DebitCard.Navigator screenOptions={screenOptions}>
+        <DebitCard.Navigator>
             <DebitCard.Screen name={Routes.ManageDebitCard} component={ManageDebitCardScreen} options={{ headerShown: false }} />
-            <DebitCard.Screen name={Routes.SetupCardLimit} component={SetupCardLimitScreen} />
+            <DebitCard.Screen name={Routes.SetupCardLimit} component={SetupCardLimitScreen} options={screenOptions}/>
         </DebitCard.Navigator>
     )
 }

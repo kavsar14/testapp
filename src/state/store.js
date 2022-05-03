@@ -13,7 +13,7 @@ const persistConfig = {
     key: 'root',
     storage: AsyncStorage,
     stateReconciler: autoMerge, // redux-persist nested merge level
-    whitelist: ['card'] // only navigation will be persisted
+    whitelist: ['card']  
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

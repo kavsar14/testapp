@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 
-import CustomIcon from '../CustomIcon';
 import Label from '../Label';
 
 import { CommonAction } from '../../state/ducks/common';
@@ -28,12 +27,6 @@ const ToastMessage = () => {
         return (
             <View style={styles.mainView}>
                 <View style={success ? styles.containersuccess : styles.containerinfo}>
-                    <CustomIcon name={success ? "done" : "info"}
-                        style={{
-                            marginRight: 8,
-                            color: Color.WHITE,
-                            fontSize: success ? Font.SIZE_20 : Font.SIZE_20
-                        }} />
                     <Label style={styles.message}>
                         {message}
                     </Label>
@@ -56,7 +49,7 @@ const styles = StyleSheet.create({
     },
     containersuccess: {
         flexDirection: 'row',
-        backgroundColor: Color.DEEPBLUE,
+        backgroundColor: Color.THEME,
         alignItems: 'center',
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 1 },

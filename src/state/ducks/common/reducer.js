@@ -6,8 +6,7 @@ const initialState = {
     isLoading: false,
     visible: false,
     success: true,
-    message: null,
-    isSwitchProfile: false,
+    message: null
 }
 
 const reducer = (state = initialState, action) => {
@@ -34,11 +33,6 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 visible: false,
                 message: null,
-            }
-        case types.SWITCH_PROFILE:
-            return {
-                ...state,
-                isSwitchProfile: _.get(action, 'payload', false),
             }
         default:
             return state;

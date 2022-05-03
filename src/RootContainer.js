@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { TextInput, Text, StatusBar } from 'react-native';
+import { TextInput, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 
 import ProgressHud from './components/ProgressHud';

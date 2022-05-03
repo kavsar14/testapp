@@ -1,30 +1,19 @@
 import React from 'react';
-import { View, StyleSheet, TextInput, ViewPropTypes, Platform } from 'react-native';
+import { View, StyleSheet, TextInput, ViewPropTypes } from 'react-native';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
-
-import Label from '../Label';
-import IconButton from '../IconButton';
 
 import { Color, Font } from '../../utils/theme';
+import { currencyView } from '../../utils/globals';
 
 const Textfield = (props) => {
-    const { style } = props;
-    const { inputContainerStyle, inputStyle, placeholder, disabled, defaultValue, placeholderTextColor, iconStyle, value, editable, secureTextEntry, autoCorrect, autoCapitalize, multiline, textAlignVertical, textAlign, numberOfLines, maxLength, keyboardType, returnKeyType, onChangeText, onFocus, onBlur, onSubmitEditing, inputAccessoryViewID, reference, autoFocus } = props;
-    const { onPressIcon, disabledIcon, iconName } = props;
-    const { errorMessage } = props;
-    // const [trimValue, setValue] = useState(value)
+    const { inputContainerStyle, inputStyle, placeholder, disabled, defaultValue, placeholderTextColor, value, editable, secureTextEntry, autoCorrect, autoCapitalize, multiline, textAlignVertical, textAlign, numberOfLines, maxLength, keyboardType, returnKeyType, onChangeText, onFocus, onBlur, onSubmitEditing, inputAccessoryViewID, reference, autoFocus } = props;
 
     return (
-        <View style={style}>
-            {!_.isEmpty(errorMessage) &&
-                <Label style={styles.errorTextStyle}>
-                    {errorMessage}
-                </Label>
-            }
-            <View style={styles.inputContainer}>
-                <View style={[styles.textInputContainer,
-                { borderColor: !_.isEmpty(errorMessage) ? Color.RED : Color.SECONDARY_OP_2 }, inputContainerStyle]}>
+        
+                <View style={[styles.textInputContainer, inputContainerStyle]}>
+                    {
+                        currencyView()
+                    }
                     <TextInput
                         defaultValue={defaultValue}
                         disabled={disabled}
@@ -54,17 +43,8 @@ const Textfield = (props) => {
                         ref={reference}
                         autoFocus={autoFocus}
                     />
-                    {!_.isEmpty(iconName) &&
-                        <IconButton
-                            style={styles.button}
-                            onPress={onPressIcon}
-                            disabled={disabledIcon}
-                            iconName={iconName}
-                            iconStyle={[styles.iconStyle, iconStyle]} />
-                    }
                 </View>
-            </View>
-        </View>
+       
     )
 }
 
@@ -122,58 +102,27 @@ Textfield.propTypes = {
     autoFocus: PropTypes.bool
 };
 
-// const inputHeight = 48;
-
 const styles = StyleSheet.create({
-    inputContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-    },
     textInputContainer: {
-        flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
+        alignItems: 'center',
+        width: '100%',
         borderWidth: 0,
         borderBottomWidth: 1,
         borderRadius: 0,
-        borderBottomColor: Color.BORDER_GREY,
+        borderBottomColor: Color.BORDER_COLOR,
     },
     textInput: {
-        flex: 1,
+        width: '85%',
         fontFamily: Font.COMFORTAA_REGULAR,
         fontSize: Font.SIZE_14,
         color: Color.BLACK,
-        ...Platform.select({
-            ios: {
-                marginHorizontal: 16,
-                marginLeft: 0,
-                marginBottom: 16
-            },
-            android: {
-                marginHorizontal: 0,
-                marginBottom: 0,
-                marginLeft: 0,
-                paddingLeft: 0
-            },
-        }),
     },
     button: {
         justifyContent: 'center',
         alignItems: 'center',
-        // width: 40
-    },
-    iconStyle: {
-        fontSize: Font.SIZE_20,
-        color: Color.GREY,
-        top: Platform.OS === 'ios' ? -8 : 0,
-        paddingHorizontal: 10,
-    },
-    errorTextStyle: {
-        color: Color.RED,
-        fontFamily: Font.COMFORTAA_REGULAR,
-        fontSize: Font.SIZE_16,
-        paddingBottom: Platform.OS === 'ios' ? 16 : 0,
-    },
+    }
 });
 
 export default Textfield;

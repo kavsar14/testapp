@@ -35,10 +35,13 @@ const styles = StyleSheet.create({
         marginTop: 32,
         fontSize: Font.SIZE_24,
         fontFamily: Font.COMFORTAA_BOLD,
-        color: Color.WHITE
+        color: Color.WHITE,
+        marginLeft: 24
     },
     logo: {
-        marginTop: 15
+        top: 16,
+        position: 'absolute',
+        right: 24
     },
     balanceTitle: {
         marginTop: 33,
@@ -50,15 +53,17 @@ const styles = StyleSheet.create({
     balanceView: {
         marginTop: 10,
         marginLeft: 24,
-        height: 33,
         alignItems: 'center',
         flexDirection: 'row',
     },
     balance: {
-        fontSize: Font.SIZE_24,
+        fontSize: Font.SIZE_22,
         fontFamily: Font.COMFORTAA_BOLD,
         color: Color.WHITE,
         marginLeft: 10
+    },
+    actionViewStyle: {
+        marginTop: 32
     }
 });
 

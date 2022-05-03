@@ -18,19 +18,15 @@ const androidHeaderHeight = 56;
 const iosHeaderHeight = statusHeight + 44;
 export const headerHeight = isIOS() ? iosHeaderHeight : androidHeaderHeight;
 
-// const statusBarHeight = StatusBar.currentHeight || 24;
-//     const headerHeight = 56;
-//     const bottomTabHeight = 80;
-
 export const Globals = {
-    kUserToken: ''
+    currency: 'S$'
 };
 
 export const currencyView = () => {
     return (
         <View style={styles.currencyView}>
             <Label style={styles.currency}>
-                S$
+                {Globals.currency}
             </Label>
         </View>
     )

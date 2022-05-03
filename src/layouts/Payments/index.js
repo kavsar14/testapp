@@ -1,7 +1,8 @@
-import React, { useState, useRef } from 'react'
-import { View, SafeAreaView, Alert, AppState } from 'react-native'
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import React  from 'react'
+import { View, SafeAreaView } from 'react-native'
+ 
 import Label from '../../components/Label'
+
 import styles from './styles'
 
 const Payments = ({ navigation, route }) => {

@@ -1,6 +1,7 @@
-import React, { useState, useRef } from 'react'
-import { View, SafeAreaView, Alert, AppState } from 'react-native'
+import React from 'react'
+import { SafeAreaView } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+
 import Label from '../../../components/Label'
 
 const Login = ({ navigation, route }) => {

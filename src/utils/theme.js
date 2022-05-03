@@ -9,6 +9,12 @@ export const Color = {
     TEXT_COLOR: '#222222',
     TITLE_TEXT_COLOR: '#25345F',
     INPUT_LIGHT: '#DADADA',
+    LIGHT_THEME: 'rgba(32, 209, 103, 0.07)',
+    LIGHT_PROGRESS_THEME: 'rgba(32, 209, 103, 0.1)',
+    LIGHT_TEXT_COLOR: 'rgba(34, 34, 34, 0.4)',
+    BORDER_COLOR: '#E5E5E5',
+    DISABLE_COLOR: '#EEEEEE',
+    RED: '#FF0000'
 };
 
 export const Font = {
